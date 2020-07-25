@@ -6,9 +6,11 @@ dependencies:
   react: 16.13.1
   react-dom: 16.13.1_react@16.13.1
   react-redux: 7.2.0_49f644e2f7de4182503f8b93abece808
+  react-redux-firebase: 3.6.0_react@16.13.1
   react-router-dom: 5.2.0_react@16.13.1
   react-scripts: 3.4.1
   redux: 4.0.5
+  redux-firestore: 0.13.0
   redux-thunk: 2.3.0
 devDependencies:
   redux-devtools-extension: 2.13.8_redux@4.0.5
@@ -5940,6 +5942,10 @@ packages:
     dev: false
     resolution:
       integrity: sha512-O3sR1/opvCDGLEVcvrGTMtLac8GJ5IwZC4puPrLuRj3l7ICKvkmA0vGuU9OW8mV9WIBRnaxp5GJh9IEAaNOoYg==
+  /immer/5.0.0:
+    dev: false
+    resolution:
+      integrity: sha512-G7gRqKbi9NE025XVyqyTV98dxUOtdKvu/P1QRaVZfA55aEcXgjbxPdm+TlWdcSMNPKijlaHNz61DGPyelouRlA==
   /import-cwd/2.1.0:
     dependencies:
       import-from: 2.1.0
@@ -9633,6 +9639,17 @@ packages:
     dev: false
     resolution:
       integrity: sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==
+  /react-redux-firebase/3.6.0_react@16.13.1:
+    dependencies:
+      hoist-non-react-statics: 3.3.2
+      lodash: 4.17.19
+      prop-types: 15.7.2
+      react: 16.13.1
+    dev: false
+    peerDependencies:
+      react: ^16.3.0
+    resolution:
+      integrity: sha512-TLGG9rEsyqab0Zi/uA0cd85tu7aDL7vx4jyjHVcWfrTLFLmgSKE0KJzE8qEiDq/wxfSKnQJSC/Our25T6BwtWg==
   /react-redux/7.2.0_49f644e2f7de4182503f8b93abece808:
     dependencies:
       '@babel/runtime': 7.10.5
@@ -9869,6 +9886,10 @@ packages:
       node: '>=8'
     resolution:
       integrity: sha512-6tDA8g98We0zd0GvVeMT9arEOnTw9qM03L9cJXaCjrip1OO764RDBLBfrB4cwzNGDj5OA5ioymC9GkizgWJDUg==
+  /reduce-reducers/1.0.4:
+    dev: false
+    resolution:
+      integrity: sha512-Mb2WZ2bJF597exiqX7owBzrqJ74DHLK3yOQjCyPAaNifRncE8OD0wFIuoMhXxTnHK07+8zZ2SJEKy/qtiyR7vw==
   /redux-devtools-extension/2.13.8_redux@4.0.5:
     dependencies:
       redux: 4.0.5
@@ -9877,6 +9898,14 @@ packages:
       redux: ^3.1.0 || ^4.0.0
     resolution:
       integrity: sha512-8qlpooP2QqPtZHQZRhx3x3OP5skEV1py/zUdMY28WNAocbafxdG2tRD1MWE7sp8obGMNYuLWanhhQ7EQvT1FBg==
+  /redux-firestore/0.13.0:
+    dependencies:
+      immer: 5.0.0
+      lodash: 4.17.19
+      reduce-reducers: 1.0.4
+    dev: false
+    resolution:
+      integrity: sha512-0Vf/MXrH6gUqVwSmAQAz9Ic1J4uADCaF29DcpcNU2ecZoYG5aQSZO2iGXUqzjAOeatE1Ksz8SDEvKu8gBRvYXg==
   /redux-thunk/2.3.0:
     dev: false
     resolution:
@@ -12104,8 +12133,10 @@ specifiers:
   react: ^16.13.1
   react-dom: ^16.13.1
   react-redux: ^7.2.0
+  react-redux-firebase: ^3.6.0
   react-router-dom: ^5.2.0
   react-scripts: 3.4.1
   redux: ^4.0.5
   redux-devtools-extension: ^2.13.8
+  redux-firestore: ^0.13.0
   redux-thunk: ^2.3.0
