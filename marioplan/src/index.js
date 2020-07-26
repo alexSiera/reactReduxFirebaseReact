@@ -13,6 +13,8 @@ import { getFirebase, ReactReduxFirebaseProvider } from "react-redux-firebase";
 import { createFirestoreInstance } from 'redux-firestore';
 import firebase from 'firebase/app';
 import fbConfig from './config/fbConfig';
+import { useSelector  } from 'react-redux'
+import { isLoaded  } from 'react-redux-firebase';
 const composeEnhancers = composeWithDevTools({
   // options like actionSanitizer, stateSanitizer
 });
@@ -25,13 +27,22 @@ const rrfProps = {
   firebase,
   config: fbConfig,
   dispatch: store.dispatch,
-  createFirestoreInstance
+  createFirestoreInstance,
+  userProfile: 'users', // where profiles are stored in database
+  presence: 'presence', // where list of online users is stored in database
+  sessions: 'sessions'
  }
-
+ function AuthIsLoaded({ children }) {
+  const auth = useSelector(state => state.firebase.auth)
+  if (!isLoaded(auth)) return <div>Loading Screen...</div>;
+      return children
+}
 ReactDOM.render(
   <Provider store={store}>
     <ReactReduxFirebaseProvider {...rrfProps}>
-      <App />
+      <AuthIsLoaded>
+        <App />
+      </AuthIsLoaded>
     </ReactReduxFirebaseProvider>
   </Provider>,
   document.getElementById("root")
